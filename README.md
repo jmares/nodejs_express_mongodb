@@ -43,11 +43,18 @@ I have no idea, why the problem wasn't resolved by using `npm audit fix` as I am
 
 - node: v12.18.3 vs v10.15.3
 - npm:  v6.14.9 vs v6.4.1
-- Clean Blog theme: updated a month ago, while book was published a year and a half ago
+- Clean Blog theme: updated a month ago, while the book was published a year and a half ago
 
 Still, I got everything working.
 
 ## Chapter 04: Templating Engines
+
+December 19, 2020
+
+Copied contents of directory ch03 into directory ch04. 
+When I tried to run th app I got an error, which forced me to delete and reinstall nodemon.
+
+Four chapters in and I feel I already have a better understanding of Node.js than after 3 Zenva courses.
 
 ## Chapter 05: Introduction to MongoDB
 
