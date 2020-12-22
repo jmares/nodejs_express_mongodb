@@ -58,3 +58,20 @@ Four chapters in and I feel I already have a better understanding of Node.js tha
 
 ## Chapter 05: Introduction to MongoDB
 
+December 21, 2020
+
+Aha! The errors I get when copying the contents of the directory of a previous chapter, can be avoided when I exclude the node_modules directory.
+
+After everythin was copied in `ch05`, then execute the following commands at the command line
+
+```bash
+npm init
+npm install
+npm audit fix
+```
+
+Found some typos in the code and got a warning when executing the `test.js` file.
+
+```
+DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor
+```
