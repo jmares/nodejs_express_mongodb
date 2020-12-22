@@ -75,3 +75,11 @@ Found some typos in the code and got a warning when executing the `test.js` file
 ```
 DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor
 ```
+
+## Chapter 06: Applying MongoDB to Our Project
+
+December 22, 2020
+
+In this chapter you learn how to post new articles, display a list with all the articles and display a single article.
+Two thirds in to the chapter, the author suggests you try out adding a functioning search bar to the site. Wait! What?
+
