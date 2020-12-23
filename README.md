@@ -83,3 +83,10 @@ December 22, 2020
 In this chapter you learn how to post new articles, display a list with all the articles and display a single article.
 Two thirds in to the chapter, the author suggests you try out adding a functioning search bar to the site. Wait! What?
 
+## Chapter 07: Uploading an Image with Express
+
+December 23, 2020
+
+I have the impression that there is less explaining of the code.
+
+
