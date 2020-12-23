@@ -89,4 +89,33 @@ December 23, 2020
 
 I have the impression that there is less explaining of the code.
 
+## Chapter 08: Introduction to Express Middleware
+
+December 23, 2020
+
+Had to modify the following code
+
+```javascript
+const validateMiddleWare = (req,res,next)=>{    
+    if(req.files == null || req.body.title == null || req.body.title == null){        
+        return res.redirect('/posts/new')
+    }    
+    next()
+}
+```
+
+to the following in order to get it to work:
+
+```javascript
+const validateMiddleWare = (req, res, next) => {
+    if (req.files == null || req.body.title.trim() == '' || req.body.body.trim() == '') {
+        return res.redirect('/posts/new');
+    }
+    next()
+};
+```
+
+Because even when the form fields title and body are empty, they are not null.
+
+
 
