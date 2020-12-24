@@ -117,5 +117,25 @@ const validateMiddleWare = (req, res, next) => {
 
 Because even when the form fields title and body are empty, they are not null.
 
+## Chapter 09: Refactoring to MVC
+
+December 24, 2020
+
+The faulty code from the previous chaptered appeared again.
+
+## Chapter 10: User Registration
+
+## Chapter 11: User Authentication with Express Sessions
+
+## Chapter 12: Showing Validation Errors
+
+## Chapter 13: Relating Posts Collection with Users Collection
+
+## Chapter 14: Adding a WYSIWYG Editor
+
+## Chapter 15: Using MongoDB Atlas
+
+## Chapter 16: Deploying Web Apps on Heroku
+
 
 
