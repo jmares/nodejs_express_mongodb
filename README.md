@@ -147,6 +147,29 @@ mongoose.connect('mongodb://localhost/my_database', {
 
 ## Chapter 11: User Authentication with Express Sessions
 
+December 27, 2020
+
+Author referred to a non-existing file on page 107. The file `homePage.js` doesn't exist, the code that needs modifying is in the file `controllers/home.js`.
+
+Encountered another deprectation warning:
+
+```
+express-session deprecated undefined resave option; provide resave option index.js:64:9
+express-session deprecated undefined saveUninitialized option; provide saveUninitialized option index.js:64:9
+```
+
+So I added the `resave` and `saveUninitialized` to the the function in the `index.js` file:
+
+```javascript
+app.use(expressSession({
+    resave: true,
+    saveUninitialized: true,
+    secret: 'keyboard cat'
+}));
+```
+
+Sometimes small pieces of code samples need to be added to a file, without telling where exactly. At the end of the file, after certain statementens and before others. Already wasted some time figuring that out!
+
 ## Chapter 12: Showing Validation Errors
 
 ## Chapter 13: Relating Posts Collection with Users Collection

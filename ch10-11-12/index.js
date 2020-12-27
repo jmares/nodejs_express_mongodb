@@ -14,6 +14,10 @@ const newUserController = require('./controllers/newUser');
 const storeUserController = require('./controllers/storeUser');
 const loginController = require('./controllers/login');
 const loginUserController = require('./controllers/loginUser');
+const expressSession = require('express-session');
+const logoutController = require('./controllers/logout');
+const authMiddleware = require('./middleware/authMiddleware');
+const redirectIfAuthenticatedMiddleware = require('./middleware/redirectIfAuthenticatedMiddleware');
 
 
 app.use(fileUpload());
@@ -42,7 +46,22 @@ const myMiddleWare = (req, res, next) => {
 };
 app.use(myMiddleWare);
 
+app.use(expressSession({
+    resave: true,
+    saveUninitialized: true,
+    secret: 'keyboard cat'
+}));
+
+global.loggedIn = null;
+
+app.use("*", (req, res, next) => {
+    loggedIn = req.session.userId;
+    next();
+})
+
 app.use('/posts/store', validateMiddleWare);
+
+app.get('/posts/new', authMiddleware, newPostController);
 
 app.get('/', homeController);
 
@@ -50,12 +69,16 @@ app.get('/post/:id', getPostController);
 
 app.get('/posts/new', newPostController);
 
-app.post('/posts/store', storePostController);
+app.post('/posts/store', authMiddleware, storePostController);
 
-app.get('/auth/register', newUserController);
+app.get('/auth/register', redirectIfAuthenticatedMiddleware, newUserController);
 
-app.post('/users/register', storeUserController);
+app.post('/users/register', redirectIfAuthenticatedMiddleware, storeUserController);
 
-app.get('/auth/login', loginController);
+app.get('/auth/login', redirectIfAuthenticatedMiddleware, loginController);
 
-app.post('/users/login', loginUserController);
+app.post('/users/login', redirectIfAuthenticatedMiddleware, loginUserController);
+
+app.get('/auth/logout', logoutController);
+
+app.use((req, res) => res.render('notfound'));
