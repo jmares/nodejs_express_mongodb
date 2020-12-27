@@ -121,9 +121,29 @@ Because even when the form fields title and body are empty, they are not null.
 
 December 24, 2020
 
-The faulty code from the previous chaptered appeared again.
+The faulty code from the previous chapter appeared again.
 
 ## Chapter 10: User Registration
+
+December 27, 2020
+
+Received the following warning
+
+```
+(node:4789) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+```
+
+It is just a warning, but found a solution on StackOverflow: add `useCreateIndex: true` and `useNewUrlParser: true` to the `mongoose.connect` function in `index.js`.
+
+```javascript
+mongoose.connect('mongodb://localhost/my_database', { 
+    useCreateIndex: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true, 
+    useNewUrlParser: true 
+});
+
+```
 
 ## Chapter 11: User Authentication with Express Sessions
 
