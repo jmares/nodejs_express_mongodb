@@ -158,7 +158,7 @@ express-session deprecated undefined resave option; provide resave option index.
 express-session deprecated undefined saveUninitialized option; provide saveUninitialized option index.js:64:9
 ```
 
-So I added the `resave` and `saveUninitialized` to the the function in the `index.js` file:
+So I added the keys `resave` and `saveUninitialized` to the the function in the `index.js` file:
 
 ```javascript
 app.use(expressSession({
@@ -171,6 +171,14 @@ app.use(expressSession({
 Sometimes small pieces of code samples need to be added to a file, without telling where exactly. At the end of the file, after certain statementens and before others. Already wasted some time figuring that out!
 
 ## Chapter 12: Showing Validation Errors
+
+December 28, 2020
+
+The backticks in the error messages weren't properly escaped, so I had to be creative.
+
+```javascript
+<li class="list-group-item list-group-item-danger"><%- errors[i].replace(/`/g, '&apos;') %></li>
+```
 
 ## Chapter 13: Relating Posts Collection with Users Collection
 
