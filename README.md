@@ -182,6 +182,9 @@ The backticks in the error messages weren't properly escaped, so I had to be cre
 
 ## Chapter 13: Relating Posts Collection with Users Collection
 
+December 29, 2020
+
+
 ## Chapter 14: Adding a WYSIWYG Editor
 
 ## Chapter 15: Using MongoDB Atlas
