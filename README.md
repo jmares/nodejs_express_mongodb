@@ -187,6 +187,16 @@ December 29, 2020
 
 ## Chapter 14: Adding a WYSIWYG Editor
 
+December 29, 2020
+
+Not to pleased with this chapter. The Summernote editor had a higher version number than the one in the book, and when I used that version with the code from the book I ended up with an infinite loop of forms inside forms. Copying the head element from the book (referring to an older version of Summernote) gave me a mostly working editor, but the dropdowns didn't work and now the page loads two different versions of jQuery, Popper.js and Bootsrap.js. Removing one of those versions and it stops working. I decided to leave it at that.
+
+I don't believe the author thouroughly tested this code. Yes, he did mention that we now need to include the unescaped text `<%- %>` (vs previously the escaped text `<%= %>`) from the blog post into the template. However, it doesn't stop there. He uses the text also to display the description or summary in the list of articles on the homepage. My solution was to cut it short and *unescape* it. His solution was to remove it. 
+
+```javascript
+<%- blogposts[i].body.substring(0, 100) %>  ...
+```
+
 ## Chapter 15: Using MongoDB Atlas
 
 ## Chapter 16: Deploying Web Apps on Heroku
