@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('layouts/header'); -%>
+
+  <body>
+  
+    <%- include('layouts/navbar'); -%>
+  
+  
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('/img/first-person.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Register a new account</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+              <% if (errors != null && errors.length > 0) { %>
+                <ul class="list-group">
+                  <% for (var i = 0; i < errors.length; i++) { %>
+                    <li class="list-group-item list-group-item-danger"><%- errors[i].replace(/`/g, '&apos;') %></li>
+                  <% } %>
+                  </ul>
+              <% } %>
+                <form action="/users/register" method="POST" enctype="multipart/form-data">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>User Name</label>
+                            <input type="text" class="form-control" placeholder="User Name" id="username" name="username" value="<%= username %>">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Password" id="password" name="password" value="<%= password %>">
+                        </div>
+                    </div>
+                    <br>
+                    <div id="success"></div>
+                    <button type="submit" class="btn btn-primary" id="sendMessageButton">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+  <hr>
+
+  <%- include('layouts/footer'); -%>
+
+  <%- include('layouts/scripts'); -%>
+
+</body>
+
+</html>
