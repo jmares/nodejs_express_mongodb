@@ -203,5 +203,16 @@ December 30, 2020
 
 ## Chapter 16: Deploying Web Apps on Heroku
 
+Error on page 147, correct the contents of the `Procfile`:
 
+WRONG:
 
+```
+web: node app.js
+```
+
+CORRECT
+
+```
+web: node index.js
+```
